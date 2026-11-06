@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>神马影视大全在线观看达达兔-达达兔影视在线观看_神马影视大全免费看片资源</title>
+<meta name="description" content="神马影视大全在线观看达达兔，聚合电影、剧集、动漫与综艺的在线观看入口，按类型与热度快速找到想看的内容，达达兔影视免费看片体验就在这一页。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f1720'/%3E%3Cpath d='M18 22h28v6H18zM18 34h18v6H18z' fill='%23ffd166'/%3E%3Ccircle cx='45' cy='45' r='8' fill='%23ff6b6b'/%3E%3Cpath d='M42 41l7 4-7 4z' fill='%23fff'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --ink:#0f1720;
+    --ink-2:#1b2733;
+    --paper:#f5f6f8;
+    --card:#ffffff;
+    --line:#e3e6ea;
+    --gold:#ffd166;
+    --coral:#ff6b6b;
+    --teal:#2ec4b6;
+    --text:#243040;
+    --muted:#67737f;
+    --radius:16px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC",system-ui,sans-serif;
+    background:var(--paper);
+    color:var(--text);
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none;}
+  img,svg{display:block;max-width:100%;}
+  .wrap{width:min(1160px,92vw);margin:0 auto;}
+
+  /* Header */
+  header.site{
+    background:var(--ink);
+    color:#fff;
+    position:sticky;top:0;z-index:30;
+    border-bottom:1px solid rgba(255,255,255,.08);
+  }
+  .head-inner{
+    display:flex;align-items:center;gap:20px;
+    padding:12px 0;flex-wrap:wrap;
+  }
+  .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:15px;letter-spacing:.3px;color:#fff;}
+  .logo .mark{
+    width:36px;height:36px;border-radius:10px;
+    background:linear-gradient(135deg,#ffd166,#ff6b6b);
+    display:grid;place-items:center;flex:0 0 auto;
+  }
+  nav.main{margin-left:auto;display:flex;gap:4px;flex-wrap:wrap;}
+  nav.main a{
+    padding:7px 12px;border-radius:999px;font-size:14px;color:#c9d2dc;
+    transition:.2s;
+  }
+  nav.main a:hover,nav.main a:focus-visible{background:rgba(255,255,255,.1);color:#fff;}
+  .nav-cta{
+    background:var(--gold);color:var(--ink)!important;font-weight:700;
+  }
+  .nav-cta:hover{background:#ffe08a!important;}
+
+  /* Hero */
+  .hero{
+    background:radial-gradient(1200px 400px at 85% -10%,rgba(255,209,102,.18),transparent 60%),
+               linear-gradient(160deg,#101a24,#16222e 60%,#1b2733);
+    color:#fff;
+    padding:46px 0 52px;
+  }
+  .hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:38px;align-items:center;}
+  .badge{
+    display:inline-flex;align-items:center;gap:8px;
+    background:rgba(46,196,182,.16);color:#7fe6da;
+    border:1px solid rgba(46,196,182,.35);
+    padding:4px 12px;border-radius:999px;font-size:12.5px;font-weight:600;
+  }
+  h1{
+    font-size:clamp(23px,3.2vw,34px);
+    line-height:1.38;margin:16px 0 14px;font-weight:800;letter-spacing:.2px;
+  }
+  h1 .hl{color:var(--gold);}
+  .hero p.lead{color:#c3ccd6;margin:0 0 22px;font-size:15.5px;max-width:36em;}
+  .hero-actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center;}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:11px 20px;border-radius:12px;font-weight:700;font-size:15px;
+    border:1px solid transparent;transition:.2s;cursor:pointer;
+  }
+  .btn-primary{background:var(--coral);color:#fff;}
+  .btn-primary:hover{background:#ff5252;}
+  .btn-ghost{background:rgba(255,255,255,.08);color:#fff;border-color:rgba(255,255,255,.18);}
+  .btn-ghost:hover{background:rgba(255,255,255,.16);}
+  .btn[aria-disabled="true"]{opacity:.55;cursor:not-allowed;pointer-events:none;}
+  .hero-stats{display:flex;gap:26px;margin-top:26px;flex-wrap:wrap;}
+  .hero-stats b{display:block;font-size:20px;color:var(--gold);}
+  .hero-stats span{font-size:12.5px;color:#9aa8b6;}
+
+  .poster-card{
+    background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.02));
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:20px;padding:18px;
+  }
+  .poster-card svg{border-radius:12px;background:#0b131b;width:100%;height:auto;}
+  .poster-meta{display:flex;justify-content:space-between;margin-top:12px;font-size:12.5px;color:#9aa8b6;}
+  .poster-meta strong{color:#fff;font-size:14px;}
+
+  /* Section basics */
+  section{padding:52px 0;}
+  .sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:26px;flex-wrap:wrap;}
+  .sec-head h2{font-size:22px;margin:0;font-weight:800;letter-spacing:.2px;}
+  .sec-head p{margin:6px 0 0;color:var(--muted);font-size:14px;max-width:52em;}
+  .kicker{font-size:12.5px;color:var(--coral);font-weight:700;letter-spacing:1.5px;text-transform:uppercase;}
+
+  /* Filter */
+  .filters{
+    display:flex;gap:10px;flex-wrap:wrap;margin-bottom:24px;align-items:center;
+  }
+  .chip{
+    border:1px solid var(--line);background:#fff;color:var(--text);
+    padding:7px 15px;border-radius:999px;font-size:13.5px;cursor:pointer;transition:.18s;font-family:inherit;
+  }
+  .chip:hover{border-color:#c6ccd4;}
+  .chip.active{background:var(--ink);color:#fff;border-color:var(--ink);}
+  .search-box{margin-left:auto;display:flex;gap:8px;}
+  .search-box input{
+    font-family:inherit;font-size:14px;padding:8px 14px;border-radius:10px;
+    border:1px solid var(--line);background:#fff;min-width:190px;color:var(--text);
+  }
+  .search-box input:focus{outline:2px solid rgba(255,107,107,.35);border-color:var(--coral);}
+
+  /* Cards */
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .card{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    overflow:hidden;display:flex;flex-direction:column;transition:.2s;
+  }
+  .card:hover{transform:translateY(-3px);box-shadow:0 12px 26px rgba(15,23,32,.08);}
+  .thumb{position:relative;aspect-ratio:16/9;background:#0b131b;overflow:hidden;}
+  .thumb svg{width:100%;height:100%;}
+  .tag{
+    position:absolute;top:10px;left:10px;background:rgba(15,23,32,.78);color:#fff;
+    font-size:11.5px;padding:2px 9px;border-radius:999px;font-weight:600;
+  }
+  .card-body{padding:14px 16px 16px;display:flex;flex-direction:column;flex:1;}
+  .card-body h3{margin:0 0 6px;font-size:16px;font-weight:800;}
+  .card-body p{margin:0 0 12px;font-size:13.5px;color:var(--muted);line-height:1.65;}
+  .card-foot{margin-top:auto;display:flex;justify-content:space-between;align-items:center;font-size:12.5px;color:#8a949f;}
+  .card-foot a{color:var(--coral);font-weight:700;}
+  .card-foot a:hover{text-decoration:underline;}
+
+  /* Guide / article blocks */
+  .split{display:grid;grid-template-columns:1.05fr .95fr;gap:34px;align-items:start;}
+  .prose h2{font-size:22px;margin:0 0 14px;font-weight:800;}
+  .prose h3{font-size:16.5px;margin:22px 0 8px;font-weight:800;}
+  .prose p{margin:0 0 12px;font-size:15px;color:#3a4655;}
+  .prose ul{margin:0 0 14px;padding-left:20px;font-size:14.5px;color:#3a4655;}
+  .prose li{margin-bottom:6px;}
+  .panel{
+    background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:22px 22px 18px;
+  }
+  .panel h3{margin:0 0 12px;font-size:16px;font-weight:800;}
+  .step{display:flex;gap:12px;margin-bottom:14px;}
+  .step .num{
+    flex:0 0 26px;height:26px;border-radius:8px;background:var(--ink);color:var(--gold);
+    display:grid;place-items:center;font-size:13px;font-weight:800;
+  }
+  .step p{margin:0;font-size:14px;color:#3a4655;}
+  .step p strong{color:var(--ink);}
+
+  /* FAQ */
+  .faq-list{display:grid;gap:12px;max-width:900px;}
+  details{
+    background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 18px;
+  }
+  details summary{
+    cursor:pointer;font-weight:700;font-size:15px;list-style:none;display:flex;justify-content:space-between;gap:12px;
+  }
+  details summary::-webkit-details-marker{display:none;}
+  details summary::after{content:"+";color:var(--coral);font-weight:800;font-size:18px;line-height:1;}
+  details[open] summary::after{content:"–";}
+  details p{margin:10px 0 0;font-size:14px;color:#3a4655;}
+
+  /* CTA band */
+  .band{
+    background:linear-gradient(135deg,#15212c,#1f3040);
+    color:#fff;border-radius:22px;padding:34px 32px;
+    display:flex;gap:26px;align-items:center;justify-content:space-between;flex-wrap:wrap;
+  }
+  .band h2{margin:0 0 8px;font-size:21px;font-weight:800;}
+  .band p{margin:0;color:#b6c1cc;font-size:14.5px;max-width:44em;}
+
+  /* Footer */
+  footer{
+    background:var(--ink);color:#9aa8b6;padding:38px 0 26px;margin-top:20px;font-size:13.5px;
+  }
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:28px;margin-bottom:26px;}
+  footer h4{color:#fff;font-size:14px;margin:0 0 10px;font-weight:700;}
+  footer a{color:#9aa8b6;}
+  footer a:hover{color:var(--gold);}
+  footer ul{list-style:none;padding:0;margin:0;}
+  footer li{margin-bottom:7px;}
+  .foot-brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:800;font-size:14px;margin-bottom:10px;}
+  .foot-bottom{border-top:1px solid rgba(255,255,255,.09);padding-top:16px;font-size:12.5px;color:#7b8794;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;}
+
+  @media(max-width:900px){
+    .hero-grid,.split,.grid{grid-template-columns:1fr;}
+    .grid{grid-template-columns:repeat(2,1fr);}
+    .foot-grid{grid-template-columns:1fr 1fr;}
+    .search-box{margin-left:0;width:100%;}
+    .search-box input{flex:1;min-width:0;}
+  }
+  @media(max-width:620px){
+    .grid{grid-template-columns:1fr;}
+    .head-inner{gap:10px;}
+    nav.main{margin-left:0;width:100%;overflow-x:auto;flex-wrap:nowrap;padding-bottom:2px;}
+    nav.main a{white-space:nowrap;}
+    .hero{padding:34px 0 38px;}
+    section{padding:38px 0;}
+    .band{padding:26px 22px;}
+    .foot-grid{grid-template-columns:1fr;}
+    .logo{font-size:13.5px;}
+  }
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap head-inner">
+    <a class="logo" href="#top" aria-label="神马影视大全在线观看达达兔 首页">
+      <span class="mark" aria-hidden="true">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+          <path d="M4 6h16v4H4zM4 13h10v4H4z" fill="#0f1720"/>
+          <circle cx="18" cy="16" r="4" fill="#0f1720"/>
+          <path d="M16.6 14.2l3 1.8-3 1.8z" fill="#ffd166"/>
+        </svg>
+      </span>
+      神马影视大全在线观看达达兔
+    </a>
+    <nav class="main" aria-label="主导航">
+      <a href="#top">首页</a>
+      <a href="#library">影视库</a>
+      <a href="#howto">观看方式</a>
+      <a href="#picks">本季推荐</a>
+      <a href="#faq">常见问题</a>
+      <a class="nav-cta" href="#library">开始看片</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero" style="padding-top:46px;">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="badge">● 在线观看 · 多端适配</span>
+        <h1>神马影视大全在线观看达达兔</h1>
+        <p class="lead">这里是神马影视大全在线观看达达兔的内容首页：把电影、剧集、动漫与综艺按类型、热度分区归拢，进站即可按片名检索或直接挑选，减少在多个页面之间来回跳转的时间。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#library">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+            进入影视库
+          </a>
+          <a class="btn btn-ghost" href="#howto">了解观看方式</a>
+        </div>
+        <div class="hero-stats">
+          <div><b>4 大类</b><span>电影 / 剧集 / 动漫 / 综艺</span></div>
+          <div><b>按热度</b><span>本季热门片单持续更新</span></div>
+          <div><b>免费</b><span>无需注册即可浏览</span></div>
+        </div>
+      </div>
+      <div class="poster-card" aria-hidden="true">
+        <svg viewBox="0 0 320 190" role="img" aria-label="影视播放界面示意图">
+          <defs>
+            <linearGradient id="pg" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#24394d"/>
+              <stop offset="1" stop-color="#0d1a24"/>
+            </linearGradient>
+            <linearGradient id="pg2" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#ffd166"/>
+              <stop offset="1" stop-color="#ff6b6b"/>
+            </linearGradient>
+          </defs>
+          <rect width="320" height="190" rx="12" fill="url(#pg)"/>
+          <circle cx="160" cy="82" r="26" fill="rgba(255,209,102,.16)"/>
+          <path d="M152 70l20 12-20 12z" fill="#ffd166"/>
+          <rect x="26" y="132" width="90" height="8" rx="4" fill="rgba(255,255,255,.22)"/>
+          <rect x="26" y="148" width="58" height="8" rx="4" fill="rgba(255,255,255,.12)"/>
+          <rect x="26" y="164" width="160" height="4" rx="2" fill="rgba(255,255,255,.14)"/>
+          <rect x="26" y="164" width="96" height="4" rx="2" fill="url(#pg2)"/>
+          <rect x="214" y="132" width="80" height="36" rx="8" fill="rgba(255,255,255,.08)"/>
+          <rect x="224" y="142" width="60" height="6" rx="3" fill="rgba(255,255,255,.22)"/>
+          <rect x="224" y="154" width="38" height="6" rx="3" fill="rgba(255,255,255,.14)"/>
+        </svg>
+        <div class="poster-meta">
+          <div><strong>本季热播</strong><br>剧集 · 动漫 · 电影</div>
+          <div style="text-align:right;">在线观看<br>无需登录</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIBRARY -->
+  <section id="library">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <div class="kicker">影视库</div>
+          <h2>按类型挑选，快速进入播放</h2>
+          <p>神马影视大全在线观看达达兔的影视库按内容类型分区，点击分类即可筛选；也可以直接在右侧输入片名检索，结果会随输入即时过滤。</p>
+        </div>
+      </div>
+
+      <div class="filters" role="group" aria-label="影视分类筛选">
+        <button class="chip active" data-cat="all" type="button">全部</button>
+        <button class="chip" data-cat="movie" type="button">电影</button>
+        <button class="chip" data-cat="tv" type="button">剧集</button>
+        <button class="chip" data-cat="anime" type="button">动漫</button>
+        <button class="chip" data-cat="show" type="button">综艺</button>
+        <div class="search-box">
+          <label for="q" style="position:absolute;left:-9999px;">搜索片名</label>
+          <input id="q" type="search" placeholder="搜索片名，例如：长夜" autocomplete="off">
+        </div>
+      </div>
+
+      <div class="grid" id="cardGrid">
+        <article class="card" data-cat="movie" data-name="长夜将尽">
+          <div class="thumb">
+            <span class="tag">电影</span>
+            <svg viewBox="0 0 320 180" aria-hidden="true">
+              <rect width="320" height="180" fill="#101c27"/>
+              <circle cx="256" cy="46" r="30" fill="#ffd166" opacity=".85"/>
+              <path d="M0 140l90-52 70 40 80-46 80 48v50H0z" fill="#1f3346"/>
+              <path d="M0 160l110-48 90 40 120-52v80H0z" fill="#16283a"/>
+            </svg>
+          </div>
+          <div class="card-body">
+            <h3>长夜将尽</h3>
+            <p>城市悬疑题材，围绕一桩旧案重启展开，节奏偏慢热，适合喜欢推理线的观众。</p>
+            <div class="card-foot"><span>悬疑 · 电影</span><a href="#library">查看</a></div>
+          </div>
+        </article>
+
+        <article class="card" data-cat="tv" data-name="山海旧事">
+          <div class="thumb">
+            <span class="tag">剧集</span>
+            <svg viewBox="0 0 320 180" aria-hidden="true">
+              <rect width="320" height="180" fill="#132b2a"/>
+              <path d="M0 120l60-40 50 26 60-40 60 34 90-30v70H0z" fill="#23514c"/>
+              <circle cx="70" cy="48" r="18" fill="#2ec4b6" opacity=".8"/>
+              <circle cx="250" cy="38" r="12" fill="#ffd166" opacity=".7"/>
+            </svg>
+          </div>
+          <div class="card-body">
+            <h3>山海旧事</h3>
+            <p>年代群像剧集，讲述几代人在沿海小城的迁徙与生活，叙事跨度大，人物线较多。</p>
+            <div class="card-foot"><span>剧情 · 剧集</span><a href="#library">查看</a></div>
+          </div>
+        </article>
+
+        <article class="card" data-cat="anime" data-name="星轨少年">
+          <div class="thumb">
+            <span class="tag">动漫</span>
+            <svg viewBox="0 0 320 180" aria-hidden="true">
+              <rect width="320" height="180" fill="#1a1533"/>
+              <circle cx="90" cy="60" r="34" fill="#ff6b6b" opacity=".55"/>
+              <circle cx="150" cy="90" r="22" fill="#ffd166" opacity=".8"/>
+              <path d="M230 40l14 28 30 4-22 22 6 30-28-15-28 15 6-30-22-22 30-4z" fill="#7f8cff" opacity=".55"/>
+            </svg>
+          </div>
+          <div class="card-body">
+            <h3>星轨少年</h3>
+            <p>科幻成长向动漫，主线围绕少年与机械伙伴的旅程，单集时长较短，适合碎片时间。</p>
+            <div class="card-foot"><span>科幻 · 动漫</span><a href="#library">查看</a></div>
+          </div>
+        </article>
+
+        <article class="card" data-cat="show" data-name="周末开麦">
+          <div class="thumb">
+            <span class="tag">综艺</span>
+            <svg viewBox="0 0 320 180" aria-hidden="true">
+              <rect width="320" height="180" fill="#2a1a1a"/>
+              <rect x="40" y="60" width="60" height="90" rx="10" fill="#ff6b6b" opacity=".7"/>
+              <rect x="120" y="40" width="60" height="110" rx="10" fill="#ffd166" opacity=".8"/>
+              <rect x="200" y="76" width="60" height="74" rx="10" fill="#2ec4b6" opacity=".7"/>
+            </svg>
+          </div>
+          <div class="card-body">
+            <h3>周末开麦</h3>
+            <p>室内谈话类综艺，每期围绕一个生活议题展开，嘉宾轮换，单期可独立观看。</p>
+            <div class="card-foot"><span>谈话 · 综艺</span><a href="#library">查看</a></div>
+          </div>
+        </article>
+
+        <article class="card" data-cat="movie" data-name="回声海岸">
+          <div class="thumb">
+            <span class="tag">电影</span>
+            <svg viewBox="0 0 320 180" aria-hidden="true">
+              <rect width="320" height="180" fill="#0e2230"/>
+              <path d="M0 118q60-26 120 0t200 0v62H0z" fill="#1d4a5c"/>
+              <path d="M0 138q70-22 140 0t180 0v42H0z" fill="#143440"/>
+              <circle cx="240" cy="50" r="20" fill="#ffd166" opacity=".75"/>
+            </svg>
+          </div>
+          <div class="card-body">
+            <h3>回声海岸</h3>
+            <p>海边小镇题材剧情片，以一段录音带为线索串起两代人的关系，画面以自然光为主。</p>
+            <div class="card-foot"><span>剧情 · 电影</span><a href="#library">查看</a></div>
+          </div>
+        </article>
+
+        <article class="card" data-cat="tv" data-name="第七码头">
+          <div class="thumb">
+            <span class="tag">剧集</span>
+            <svg viewBox="0 0 320" height="180" aria-hidden="true">
+              <rect width="320" height="180" fill="#1b1f2a"/>
+              <rect x="30" y="96" width="52" height="54" fill="#2d3a4a"/>
+              <rect x="96" y="70" width="52" height="80" fill="#3a4a5c"/>
+              <rect x="162" y="104" width="52" height="46" fill="#2d3a4a"/>
+              <rect x="228" y="84" width="52" height="66" fill="#3a4a5c"/>
+              <circle cx="160" cy="34" r="14" fill="#ff6b6b" opacity=".8"/>
+            </svg>
+          </div>
+          <div class="card-body">
+            <h3>第七码头</h3>
+            <p>行业题材剧集，聚焦港口调度与人事纠葛，群戏较多，适合连看推进剧情。</p>
+            <div class="card-foot"><span>行业 · 剧集</span><a href="#library">查看</a></div>
+          </div>
+        </article>
+      </div>
+      <p id="noResult" style="display:none;color:var(--muted);font-size:14px;margin-top:16px;">没有匹配的片名，换个关键词或切换分类试试。</p>
+    </div>
+  </section>
+
+  <!-- HOW TO -->
+  <section id="howto" style="background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+    <div class="wrap split">
+      <div class="prose">
+        <div class="kicker">观看方式</div>
+        <h2>神马影视大全在线观看达达兔怎么用</h2>
+        <p>很多人第一次打开影视聚合页，会先被密集的片单淹没。神马影视大全在线观看达达兔把入口拆成两步：先在影视库中确定类型，再在片名上做二次确认。这样即使只记得部分片名，也能通过搜索框把范围收窄。</p>
+        <h3>先定类型，再看片单</h3>
+        <p>电影、剧集、动漫、综艺四类的观看节奏差别很大。电影适合一次性看完，剧集需要留意集数与更新状态，动漫单集偏短，综艺则可以任意跳期。分类筛选的作用，是先把不符合当下时间安排的内容排除掉。</p>
+        <h3>搜索框适合“记得半个片名”</h3>
+        <p>搜索会即时过滤当前片单，输入两个字就能看到匹配结果。如果没有任何结果，页面会给出提示，此时清空关键词或切回“全部”即可恢复完整列表。搜索与筛选可以叠加使用。</p>
+        <ul>
+          <li>桌面端：顶部导航固定，随时返回影视库。</li>
+          <li>手机端：分类按钮横向排列，单列卡片减少误触。</li>
+          <li>浏览无需注册，播放页另行打开。</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3>三步开始观看</h3>
+        <div class="step"><div class="num">1</div><p><strong>选择类型</strong><br>在影视库点击电影、剧集、动漫或综艺，缩小片单范围。</p></div>
+        <div class="step"><div class="num">2</div><p><strong>确认片名</strong><br>用搜索框输入记得的关键词，命中后点击卡片右下角“查看”。</p></div>
+        <div class="step"><div class="num">3</div><p><strong>进入播放</strong><br>在播放页选择清晰度与集数，按自己的网络情况调整。</p></div>
+        <div class="step" style="margin-bottom:0;"><div class="num">4</div><p><strong>找不到时</strong><br>换用更短的关键词，或返回“全部”重新浏览热门片单。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PICKS -->
+  <section id="picks">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <div class="kicker">本季推荐</div>
+          <h2>按观看场景挑片</h2>
+          <p>神马影视大全在线观看达达兔的推荐不做堆砌，而是按可用时间与观看习惯分组，方便直接对号入座。</p>
+        </div>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <div class="card-body">
+            <h3>只有半小时</h3>
+            <p>优先选单集动漫或谈话类综艺，单期结构完整，中途停下也不影响理解后续内容。</p>
+            <div class="card-foot"><span>动漫 · 综艺</span><a href="#library">去筛选</a></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-body">
+            <h3>想一次看完</h3>
+            <p>电影更适合完整叙事，悬疑与剧情片在信息密度上更集中，适合不被打断的时段。</p>
+            <div class="card-foot"><span>电影</span><a href="#library">去筛选</a></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-body">
+            <h3>准备连看几集</h3>
+            <p>剧集与长篇动漫更适合连续观看，建议先确认集数与更新状态，再安排时间。</p>
+            <div class="card-foot"><span>剧集 · 动漫</span><a href="#library">去筛选</a></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" style="background:#fff;border-top:1px solid var(--line);">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <div class="kicker">常见问题</div>
+          <h2>观看前可能想知道的几件事</h2>
+        </div>
+      </div>
+      <div class="faq-list">
+        <details open>
+          <summary>神马影视大全在线观看达达兔需要注册吗？</summary>
+          <p>浏览影视库与使用搜索、分类筛选不需要注册，直接打开页面即可。播放环节在对应播放页完成，具体是否需要登录以播放页提示为准。</p>
+        </details>
+        <details>
+          <summary>为什么搜索不到某部片？</summary>
+          <p>搜索只针对当前片单过滤，可能该片尚未收录，或关键词过长。建议输入更短的核心词，或先切回“全部”分类再试。</p>
+        </details>
+        <details>
+          <summary>片单会更新吗？</summary>
+          <p>影视库按分类维护，本季推荐与热门片单会随内容调整。页面不承诺固定更新时间，以实际展示为准。</p>
+        </details>
+        <details>
+          <summary>手机上观看体验如何？</summary>
+          <p>页面采用响应式布局，手机端为单列卡片，分类按钮可横向滑动，搜索框占满整行，便于单手操作。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="padding-top:0;">
+    <div class="wrap">
+      <div class="band">
+        <div>
+          <h2>现在就从影视库开始</h2>
+          <p>神马影视大全在线观看达达兔把电影、剧集、动漫与综艺收拢在一页，选类型、搜片名、进播放，三步完成从浏览到观看的过渡。</p>
+        </div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;">
+          <a class="btn btn-primary" href="#library">进入影视库</a>
+          <a class="btn btn-ghost" href="#picks">看本季推荐</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">
+          <span class="mark" style="width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,#ffd166,#ff6b6b);display:grid;place-items:center;" aria-hidden="true">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="#0f1720"><path d="M8 5v14l11-7z"/></svg>
+          </span>
+          神马影视大全在线观看达达兔
+        </div>
+        <p style="margin:0;max-width:30em;">一个按类型与热度归拢影片的在线观看入口页，帮助观众更快找到想看的电影、剧集、动漫与综艺。</p>
+      </div>
+      <div>
+        <h4>站内导航</h4>
+        <ul>
+          <li><a href="#library">影视库</a></li>
+          <li><a href="#howto">观看方式</a></li>
+          <li><a href="#picks">本季推荐</a></li>
+          <li><a href="#faq">常见问题</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>内容分类</h4>
+        <ul>
+          <li><a href="#library">电影在线观看</a></li>
+          <li><a href="#library">剧集在线观看</a></li>
+          <li><a href="#library">动漫在线观看</a></li>
+          <li><a href="#library">综艺在线观看</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 神马影视大全在线观看达达兔 · 内容以实际展示为准</span>
+      <span>本站为影视信息聚合入口页，片源与播放服务由对应页面提供。</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var chips = document.querySelectorAll('.chip');
+  var cards = document.querySelectorAll('#cardGrid .card');
+  var input = document.getElementById('q');
+  var noResult = document.getElementById('noResult');
+  var activeCat = 'all';
+
+  function apply(){
+    var kw = (input.value || '').trim().toLowerCase();
+    var visible = 0;
+    cards.forEach(function(card){
+      var catOk = activeCat === 'all' || card.getAttribute('data-cat') === activeCat;
+      var name = (card.getAttribute('data-name') || '').toLowerCase();
+      var text = card.textContent.toLowerCase();
+      var kwOk = !kw || name.indexOf(kw) > -1 || text.indexOf(kw) > -1;
+      var show = catOk && kwOk;
+      card.style.display = show ? '' : 'none';
+      if(show) visible++;
+    });
+    noResult.style.display = visible === 0 ? 'block' : 'none';
+  }
+
+  chips.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      chips.forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      activeCat = btn.getAttribute('data-cat');
+      apply();
+    });
+  });
+
+  input.addEventListener('input', apply);
+})();
+</script>
+</body>
+          </html>
