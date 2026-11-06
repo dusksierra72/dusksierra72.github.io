@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>看片入口-看片入口在线观看_免费影视资源站点导航</title>
+<meta name="description" content="看片入口是一个聚合在线影视资源导航的首页，提供电影、电视剧、纪录片与综艺的观看入口指引，按类型与热度分区浏览，帮助你快速找到想看的片子并了解使用方式与常见问题。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111a2b'/%3E%3Cpath d='M24 18l20 14-20 14z' fill='%23ffb648'/%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#0d1220;
+  --bg-soft:#131b2e;
+  --card:#182136;
+  --line:rgba(255,255,255,.09);
+  --text:#eef2fa;
+  --muted:#9aa7c0;
+  --accent:#ffb648;
+  --accent-2:#5ad1ff;
+  --radius:16px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",system-ui,sans-serif;
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+img,svg{display:block;max-width:100%}
+.wrap{width:min(1140px,92vw);margin:0 auto}
+
+/* 页头 */
+header.site{
+  position:sticky;top:0;z-index:50;
+  background:rgba(13,18,32,.86);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+}
+.nav-bar{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:14px 0}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.12rem;letter-spacing:.5px}
+.brand .mark{
+  width:36px;height:36px;border-radius:11px;
+  background:linear-gradient(140deg,#1d2a45,#0f1729);
+  border:1px solid var(--line);
+  display:grid;place-items:center;flex:0 0 auto;
+}
+nav.main ul{display:flex;gap:4px;list-style:none;flex-wrap:wrap}
+nav.main a{
+  display:block;padding:7px 13px;border-radius:999px;
+  font-size:.92rem;color:var(--muted);transition:.2s;
+}
+nav.main a:hover,nav.main a:focus-visible{color:var(--text);background:var(--bg-soft)}
+.nav-cta{
+  display:inline-flex;align-items:center;gap:7px;
+  background:var(--accent);color:#1a1206;font-weight:700;
+  padding:8px 16px;border-radius:999px;font-size:.9rem;white-space:nowrap;
+}
+.nav-cta:hover{filter:brightness(1.08)}
+
+/* 首屏 */
+.hero{padding:56px 0 44px;position:relative;overflow:hidden}
+.hero::before{
+  content:"";position:absolute;inset:-30% 40% auto -20%;height:460px;
+  background:radial-gradient(closest-side,rgba(255,182,72,.16),transparent 72%);
+  pointer-events:none;
+}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center;position:relative}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:.8rem;letter-spacing:2px;color:var(--accent);
+  border:1px solid rgba(255,182,72,.32);
+  padding:5px 12px;border-radius:999px;margin-bottom:18px;
+}
+h1{font-size:clamp(2rem,4.6vw,3.1rem);line-height:1.2;letter-spacing:1px;margin-bottom:16px;font-weight:800}
+.hero p.lead{color:var(--muted);font-size:1.02rem;max-width:34em;margin-bottom:26px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:11px 22px;border-radius:12px;font-weight:600;font-size:.95rem;
+  border:1px solid transparent;transition:.2s;
+}
+.btn-primary{background:var(--accent);color:#1a1206}
+.btn-primary:hover{filter:brightness(1.08)}
+.btn-ghost{background:transparent;border-color:var(--line);color:var(--text)}
+.btn-ghost:hover{background:var(--bg-soft)}
+.hero-figure{
+  background:var(--card);border:1px solid var(--line);border-radius:22px;
+  padding:18px;box-shadow:0 24px 60px -30px rgba(0,0,0,.9);
+}
+.screen{
+  border-radius:14px;overflow:hidden;background:#0a0f1b;border:1px solid var(--line);
+  aspect-ratio:16/10;display:grid;place-items:center;position:relative;
+}
+.screen svg{width:78%;height:auto}
+.screen::after{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(circle at 70% 20%,rgba(90,209,255,.18),transparent 60%);
+  pointer-events:none;
+}
+.figure-caption{display:flex;justify-content:space-between;gap:10px;margin-top:14px;font-size:.82rem;color:var(--muted)}
+
+/* 通用区块 */
+section{padding:44px 0}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:24px;flex-wrap:wrap}
+.sec-head h2{font-size:1.42rem;font-weight:700;letter-spacing:.4px}
+.sec-head p{color:var(--muted);font-size:.9rem;max-width:40em}
+
+/* 分类筛选 */
+.filters{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:22px}
+.chip{
+  border:1px solid var(--line);background:var(--bg-soft);color:var(--muted);
+  padding:7px 15px;border-radius:999px;font-size:.88rem;cursor:pointer;transition:.18s;
+}
+.chip:hover{color:var(--text)}
+.chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#1a1206;font-weight:700}
+
+/* 卡片 */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:20px;display:flex;flex-direction:column;gap:10px;transition:.22s;
+}
+.card:hover{transform:translateY(-3px);border-color:rgba(255,182,72,.35)}
+.card .tag{font-size:.74rem;letter-spacing:1px;color:var(--accent-2);text-transform:uppercase}
+.card h3{font-size:1.06rem;font-weight:700}
+.card p{color:var(--muted);font-size:.9rem;flex:1}
+.card .meta{display:flex;justify-content:space-between;align-items:center;font-size:.8rem;color:var(--muted);border-top:1px solid var(--line);padding-top:10px}
+.card .go{color:var(--accent);font-weight:600}
+
+/* 正文双栏 */
+.split{display:grid;grid-template-columns:1.4fr .9fr;gap:34px;align-items:start}
+.prose h2{font-size:1.36rem;margin-bottom:14px}
+.prose h3{font-size:1.05rem;margin:22px 0 8px;color:var(--accent)}
+.prose p{color:#c8d2e4;font-size:.96rem;margin-bottom:12px}
+.aside-card{
+  background:var(--bg-soft);border:1px solid var(--line);border-radius:var(--radius);
+  padding:22px;position:sticky;top:88px;
+}
+.aside-card h3{font-size:1rem;margin-bottom:12px}
+.aside-card ol{list-style:none;counter-reset:step}
+.aside-card li{
+  counter-increment:step;font-size:.9rem;color:var(--muted);
+  padding:9px 0 9px 30px;position:relative;border-bottom:1px dashed var(--line);
+}
+.aside-card li:last-child{border-bottom:none}
+.aside-card li::before{
+  content:counter(step);position:absolute;left:0;top:9px;
+  width:20px;height:20px;border-radius:6px;display:grid;place-items:center;
+  background:rgba(255,182,72,.15);color:var(--accent);font-size:.74rem;font-weight:700;
+}
+
+/* 常见问题 */
+.faq{display:grid;gap:12px}
+details{
+  background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;
+}
+details+details{margin-top:0}
+summary{cursor:pointer;font-weight:600;font-size:.98rem;list-style:none;display:flex;justify-content:space-between;gap:12px;align-items:center}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--accent);font-size:1.2rem;line-height:1}
+details[open] summary::after{content:"−"}
+details p{color:var(--muted);font-size:.9rem;margin-top:10px}
+
+/* 下载条 */
+.download-band{
+  background:linear-gradient(120deg,#1b2540,#131b2e);
+  border:1px solid var(--line);border-radius:20px;
+  padding:28px;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;
+}
+.download-band h2{font-size:1.22rem;margin-bottom:6px}
+.download-band p{color:var(--muted);font-size:.9rem}
+.btn-download{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--accent);color:#1a1206;font-weight:700;
+  padding:11px 24px;border-radius:12px;font-size:.95rem;
+  pointer-events:none;
+}
+
+/* 页尾 */
+footer.site{border-top:1px solid var(--line);padding:30px 0 40px;margin-top:20px}
+.foot-grid{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:flex-start}
+.foot-brand{display:flex;align-items:center;gap:10px;font-weight:700}
+.foot-links{display:flex;gap:18px;flex-wrap:wrap;font-size:.88rem;color:var(--muted)}
+.foot-links a:hover{color:var(--text)}
+.copy{width:100%;margin-top:18px;padding-top:16px;border-top:1px solid var(--line);font-size:.8rem;color:var(--muted)}
+
+@media (max-width:900px){
+  .hero-grid,.split{grid-template-columns:1fr}
+  .aside-card{position:static}
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .hero{padding:38px 0 30px}
+}
+@media (max-width:640px){
+  .nav-bar{flex-wrap:wrap}
+  nav.main{order:3;width:100%}
+  nav.main ul{justify-content:flex-start;overflow-x:auto;flex-wrap:nowrap;padding-bottom:4px}
+  nav.main a{white-space:nowrap;padding:6px 10px;font-size:.86rem}
+  .grid{grid-template-columns:1fr}
+  h1{font-size:1.9rem}
+  section{padding:32px 0}
+  .download-band{padding:22px}
+  .foot-grid{gap:14px}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav-bar">
+    <a class="brand" href="#top" aria-label="看片入口 首页">
+      <span class="mark" aria-hidden="true">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+          <path d="M8 5.5l11 6.5-11 6.5z" fill="#ffb648"/>
+        </svg>
+      </span>
+      看片入口
+    </a>
+    <nav class="main" aria-label="主导航">
+      <ul>
+        <li><a href="#pick">今日推荐</a></li>
+        <li><a href="#types">片单分区</a></li>
+        <li><a href="#how">使用方式</a></li>
+        <li><a href="#faq">常见问题</a></li>
+      </ul>
+    </nav>
+    <a class="nav-cta" href="#pick">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5l11 6.5-11 6.5z"/></svg>
+      进入片单
+    </a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- 首屏 -->
+  <div class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">影视资源导航 · 按需找片</span>
+        <h1>看片入口</h1>
+        <p class="lead">看片入口把电影、电视剧、纪录片与综艺的观看线索收在一页，按类型、时长与热度分区陈列。你不必在多个站点之间来回跳转，先在这里确认想看什么，再顺着卡片里的说明找到对应的观看页面。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#pick">浏览推荐片单</a>
+          <a class="btn btn-ghost" href="#how">了解使用方式</a>
+        </div>
+      </div>
+      <div class="hero-figure" aria-hidden="true">
+        <div class="screen">
+          <svg viewBox="0 0 320 200" role="img" aria-label="播放界面示意插画">
+            <rect x="0" y="0" width="320" height="200" rx="10" fill="#0a0f1b"/>
+            <rect x="18" y="18" width="140" height="10" rx="5" fill="#26324c"/>
+            <rect x="18" y="36" width="90" height="8" rx="4" fill="#1c2740"/>
+            <rect x="18" y="60" width="284" height="76" rx="8" fill="#111a2b" stroke="#26324c"/>
+            <circle cx="160" cy="98" r="20" fill="none" stroke="#ffb648" stroke-width="2.5"/>
+            <path d="M153 88l16 10-16 10z" fill="#ffb648"/>
+            <rect x="18" y="152" width="200" height="6" rx="3" fill="#26324c"/>
+            <rect x="18" y="152" width="120" height="6" rx="3" fill="#5ad1ff"/>
+            <circle cx="138" cy="155" r="5" fill="#5ad1ff"/>
+            <rect x="18" y="170" width="70" height="8" rx="4" fill="#1c2740"/>
+            <rect x="96" y="170" width="70" height="8" rx="4" fill="#1c2740"/>
+          </svg>
+        </div>
+        <div class="figure-caption">
+          <span>片单分区示意</span>
+          <span>电影 · 剧集 · 纪录片 · 综艺</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 今日推荐 -->
+  <section id="pick">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2>今日推荐片单</h2>
+          <p>按观众常见的选择场景列出四张卡片：短时段放松、追剧连看、长片沉浸与真实记录。每张卡片说明适合谁看、大致体量，以及从看片入口出发该往哪个分区走。</p>
+        </div>
+      </div>
+      <div class="filters" role="group" aria-label="片单类型筛选">
+        <button class="chip" data-filter="all" aria-pressed="true">全部</button>
+        <button class="chip" data-filter="movie" aria-pressed="false">电影</button>
+        <button class="chip" data-filter="series" aria-pressed="false">剧集</button>
+        <button class="chip" data-filter="doc" aria-pressed="false">纪录片</button>
+        <button class="chip" data-filter="show" aria-pressed="false">综艺</button>
+      </div>
+      <div class="grid" id="cardGrid">
+        <article class="card" data-type="movie">
+          <span class="tag">电影</span>
+          <h3>两小时内的完整故事</h3>
+          <p>适合下班后一次看完的剧情长片与轻喜剧。剧情自成一个闭环，不需要提前了解前情，看到片尾就能收束情绪。</p>
+          <div class="meta"><span>单次观看 · 约 90–130 分钟</span><span class="go">前往电影分区</span></div>
+        </article>
+        <article class="card" data-type="series">
+          <span class="tag">剧集</span>
+          <h3>连续追看的叙事线</h3>
+          <p>适合周末或通勤时段分段观看。剧集的信息分布在多集之间，从第一集进入更稳妥，中途跳集容易丢失人物关系。</p>
+          <div class="meta"><span>多集连看 · 按季归档</span><span class="go">前往剧集分区</span></div>
+        </article>
+        <article class="card" data-type="doc">
+          <span class="tag">纪录片</span>
+          <h3>真实题材的观察视角</h3>
+          <p>适合想获得知识或换个角度看世界的观众。单集主题明确，可以随时停看，也便于按兴趣挑选题材，而非按集数顺序推进。</p>
+          <div class="meta"><span>单集独立 · 题材优先</span><span class="go">前往纪录片分区</span></div>
+        </article>
+        <article class="card" data-type="show">
+          <span class="tag">综艺</span>
+          <h3>轻松氛围的背景内容</h3>
+          <p>适合做饭、整理房间时放着听。节奏松散，不要求全程专注，挑嘉宾或主题熟悉的期数开始也不影响理解。</p>
+          <div class="meta"><span>任意期数 · 氛围优先</span><span class="go">前往综艺分区</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 片单分区 + 正文 -->
+  <section id="types">
+    <div class="wrap split">
+      <div class="prose">
+        <h2>看片入口的分区逻辑</h2>
+        <p>看片入口不是片库本身，而是一层整理过的索引。它把不同来源的观看线索归入四类：电影、剧集、纪录片与综艺。分类的依据是观看节奏，而不是题材标签。一次看完的归入电影，需要连续追看的归入剧集，单集独立的归入纪录片，氛围优先的归入综艺。</p>
+        <h3>先定场景，再定片子</h3>
+        <p>很多观众打开页面时并不知道要看什么，只知道现在有多少时间、想获得什么感受。看片入口的推荐卡片把这两件事放在最前面：卡片标题描述的是观看场景，正文才交代内容特征。这样即使没有明确目标，也能顺着场景找到合适的入口。</p>
+        <h3>卡片里的信息怎么读</h3>
+        <p>每张卡片底部的信息行包含两个部分：左侧是观看体量提示，右侧是该类别对应的分区去向。体量提示只描述大致时长与集数结构，不涉及具体片名与评分。分区去向是站内的锚点，点击后回到本页对应位置，方便继续浏览。</p>
+        <h3>筛选与浏览的配合</h3>
+        <p>上方的类型筛选按钮可以直接把卡片收窄到某一类。筛选只在当前页面内生效，不改变页面地址，刷新后恢复全部显示。对于只想看纪录片的访问者，先点筛选再逐张阅读，比从上到下扫一遍更省时间。</p>
+        <p>如果你已经明确想看某部具体作品，更直接的做法是记住片名，再到对应的资源站点搜索。看片入口在这里承担的是出发点的作用，帮你确认类型、体量与观看节奏，减少在多个页面之间反复比较的成本。</p>
+      </div>
+      <aside class="aside-card" aria-label="浏览步骤">
+        <h3>四步找到想看的</h3>
+        <ol>
+          <li>先确认这次能投入多少时间，十分钟与两小时的选择完全不同。</li>
+          <li>用类型筛选收窄范围，把不相关的卡片先隐藏掉。</li>
+          <li>读卡片正文里的内容特征，判断题材是否合口味。</li>
+          <li>按卡片右下角的分区去向继续浏览，或记下片名再搜索。</li>
+        </ol>
+      </aside>
+    </div>
+  </section>
+
+  <!-- 使用方式 -->
+  <section id="how">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2>使用看片入口的方式</h2>
+          <p>页面本身不托管视频文件，也不提供播放能力。它的价值在于把选择过程前置：在打开任何一个播放页面之前，先把类型、体量和场景想清楚。</p>
+        </div>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <span class="tag">第一步</span>
+          <h3>明确观看场景</h3>
+          <p>通勤、午休、周末整块时间，对应的内容体量差别很大。先定场景，能过滤掉一大半不合适的选项。</p>
+        </article>
+        <article class="card">
+          <span class="tag">第二步</span>
+          <h3>用筛选缩小范围</h3>
+          <p>点击类型按钮，页面只保留对应卡片。四个类型覆盖了大多数日常观看需求，无需逐条翻找。</p>
+        </article>
+        <article class="card">
+          <span class="tag">第三步</span>
+          <h3>记录片名再出发</h3>
+          <p>确定方向后记下片名或题材关键词，到具体的资源站点检索。看片入口负责选择，检索交给专业站点。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 常见问题 -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2>常见问题</h2>
+          <p>关于看片入口的定位与使用边界，集中说明几点，避免误解页面的作用。</p>
+        </div>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>看片入口提供在线播放吗？</summary>
+          <p>不提供。本页是影视资源的导航与选择辅助页面，不包含视频文件，也不具备播放功能。所有卡片描述的是观看场景与体量，实际观看需要前往对应的资源站点。</p>
+        </details>
+        <details>
+          <summary>页面上的推荐会包含具体片名和评分吗？</summary>
+          <p>当前版本以场景和类型为主，卡片只描述内容特征与观看节奏，不列出具体片名、评分或上线时间。这样可以避免信息过期，也让页面重点保持在选择方法上。</p>
+        </details>
+        <details>
+          <summary>类型筛选会影响页面链接吗？</summary>
+          <p>不会。筛选是页面内的即时操作，不修改地址栏，分享出去的链接始终显示全部卡片。如果希望对方看到某一类，直接把对应的分区锚点发过去即可。</p>
+        </details>
+        <details>
+          <summary>为什么卡片底部有下载按钮？</summary>
+          <p>下载入口用于后续提供片单清单文件，当前尚未接入实际地址，按钮处于不可点击状态。页面上其他链接均为本页锚点，可正常跳转。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 下载条 -->
+  <section>
+    <div class="wrap">
+      <div class="download-band">
+        <div>
+          <h2>片单清单下载</h2>
+          <p>将四类观看场景整理成一份清单，便于离线查看。下载通道尚未开放，开放后可在此获取。</p>
+        </div>
+        <a class="btn-download" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+            <path d="M12 4v11m0 0l-4-4m4 4l4-4M5 19h14"/>
+          </svg>
+          下载
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <a class="foot-brand" href="#top">
+        <span class="mark" aria-hidden="true" style="width:30px;height:30px;border-radius:9px;background:linear-gradient(140deg,#1d2a45,#0f1729);border:1px solid var(--line);display:grid;place-items:center">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M8 5.5l11 6.5-11 6.5z" fill="#ffb648"/></svg>
+        </span>
+        看片入口
+      </a>
+      <div class="foot-links">
+        <a href="#pick">今日推荐</a>
+        <a href="#types">片单分区</a>
+        <a href="#how">使用方式</a>
+        <a href="#faq">常见问题</a>
+      </div>
+    </div>
+    <p class="copy">看片入口是影视资源导航页面，不托管视频内容，不提供播放服务。页面内卡片与说明仅用于辅助选择，实际观看请前往相应资源站点。</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var chips = document.querySelectorAll('.chip');
+  var cards = document.querySelectorAll('#cardGrid .card');
+  chips.forEach(function(chip){
+    chip.addEventListener('click', function(){
+      chips.forEach(function(c){ c.setAttribute('aria-pressed','false'); });
+      chip.setAttribute('aria-pressed','true');
+      var f = chip.getAttribute('data-filter');
+      cards.forEach(function(card){
+        var show = (f === 'all') || (card.getAttribute('data-type') === f);
+        card.style.display = show ? '' : 'none';
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>
