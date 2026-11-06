@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>91短剧-短剧在线观看_热门短剧合集_免费短剧推荐</title>
+<meta name="description" content="91短剧是一个短剧在线观看与发现平台，聚合都市、逆袭、甜宠、悬疑等热门短剧合集，提供免费的短剧推荐与便捷的剧集浏览入口，帮你快速找到想看的短剧。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23120b1f'/%3E%3Cpath d='M24 18 L48 32 L24 46 Z' fill='%23ff4d6d'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --bg:#0d0917;
+    --bg-soft:#161022;
+    --card:#1b1329;
+    --line:rgba(255,255,255,.08);
+    --text:#f2edf8;
+    --muted:#a99fbd;
+    --accent:#ff4d6d;
+    --accent-2:#ffb03b;
+    --radius:16px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",system-ui,sans-serif;
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{display:block}
+  a{color:inherit;text-decoration:none}
+  .wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 20px}
+
+  /* Header */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(13,9,23,.86);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--line);
+  }
+  .head-in{
+    display:flex;align-items:center;justify-content:space-between;
+    gap:16px;padding:14px 0;
+  }
+  .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px;letter-spacing:.5px}
+  .logo .mark{
+    width:34px;height:34px;border-radius:10px;
+    background:linear-gradient(140deg,#ff4d6d,#ffb03b);
+    display:grid;place-items:center;flex:none;
+  }
+  .logo .mark svg{width:16px;height:16px}
+  nav.main-nav{display:flex;gap:26px;font-size:15px;color:var(--muted)}
+  nav.main-nav a{position:relative;padding:4px 0;transition:color .2s}
+  nav.main-nav a:hover{color:var(--text)}
+  nav.main-nav a::after{
+    content:"";position:absolute;left:0;bottom:-2px;width:0;height:2px;
+    background:var(--accent);transition:width .25s;border-radius:2px;
+  }
+  nav.main-nav a:hover::after{width:100%}
+  .head-cta{
+    font-size:14px;font-weight:600;padding:8px 18px;border-radius:999px;
+    background:var(--accent);color:#fff;white-space:nowrap;
+  }
+  .head-cta:hover{background:#ff647f}
+
+  /* Hero */
+  .hero{
+    position:relative;overflow:hidden;
+    padding:64px 0 56px;
+    background:
+      radial-gradient(700px 320px at 82% 10%,rgba(255,77,109,.22),transparent 70%),
+      radial-gradient(600px 300px at 8% 90%,rgba(255,176,59,.12),transparent 70%),
+      var(--bg);
+  }
+  .hero::after{
+    content:"";position:absolute;inset:0;
+    background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);
+    background-size:56px 56px;
+    mask-image:radial-gradient(circle at 50% 40%,#000,transparent 78%);
+    pointer-events:none;
+  }
+  .hero-in{position:relative;z-index:2;display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center}
+  .tagline{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:13px;color:var(--accent-2);
+    border:1px solid rgba(255,176,59,.35);
+    padding:5px 14px;border-radius:999px;margin-bottom:20px;
+    background:rgba(255,176,59,.08);
+  }
+  h1{
+    font-size:clamp(32px,5vw,50px);
+    line-height:1.18;font-weight:900;letter-spacing:1px;margin-bottom:18px;
+  }
+  h1 em{font-style:normal;color:var(--accent)}
+  .hero p.lead{color:var(--muted);font-size:16px;max-width:520px;margin-bottom:28px}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+  .btn-primary{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:13px 30px;border-radius:999px;font-weight:700;font-size:15px;
+    background:linear-gradient(120deg,var(--accent),#ff7a5c);
+    color:#fff;box-shadow:0 10px 28px rgba(255,77,109,.28);
+    transition:transform .2s;
+  }
+  .btn-primary:hover{transform:translateY(-2px)}
+  .btn-ghost{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:13px 26px;border-radius:999px;font-weight:600;font-size:15px;
+    border:1px solid var(--line);color:var(--text);background:rgba(255,255,255,.03);
+  }
+  .btn-ghost:hover{border-color:rgba(255,77,109,.5)}
+
+  .hero-visual{position:relative}
+  .poster-stack{position:relative;aspect-ratio:1/.92}
+  .poster{
+    position:absolute;border-radius:18px;overflow:hidden;
+    box-shadow:0 20px 44px rgba(0,0,0,.5);
+    border:1px solid rgba(255,255,255,.1);
+  }
+  .poster.p1{width:62%;left:0;top:6%;transform:rotate(-6deg);background:linear-gradient(160deg,#3a1b3f,#7b2a4d)}
+  .poster.p2{width:62%;right:0;top:0;transform:rotate(5deg);background:linear-gradient(160deg,#1c2a4d,#2e4f7b)}
+  .poster.p3{width:64%;left:18%;bottom:0;transform:rotate(-1deg);background:linear-gradient(160deg,#4d2a1b,#8a4b1e)}
+  .poster .cap{position:relative;z-index:2;padding:14px;display:flex;flex-direction:column;justify-content:flex-end;height:100%;color:#fff}
+  .poster .cap b{font-size:14px}
+  .poster .cap span{font-size:11px;opacity:.75}
+  .poster::before{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(circle at 70% 25%,rgba(255,255,255,.22),transparent 55%);
+  }
+  .poster .play{
+    position:absolute;top:12px;right:12px;width:26px;height:26px;border-radius:50%;
+    background:rgba(255,255,255,.9);display:grid;place-items:center;
+  }
+  .poster .play svg{width:10px;height:10px}
+
+  /* Sections */
+  section{padding:56px 0}
+  .sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:26px;flex-wrap:wrap}
+  .sec-head h2{font-size:clamp(21px,3vw,27px);font-weight:800;letter-spacing:.5px}
+  .sec-head p{color:var(--muted);font-size:14px;margin-top:4px}
+  .sec-head .more{font-size:14px;color:var(--accent);white-space:nowrap}
+
+  /* Filter */
+  .filter-bar{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:26px}
+  .chip{
+    font-size:13.5px;padding:7px 16px;border-radius:999px;
+    border:1px solid var(--line);color:var(--muted);cursor:pointer;
+    background:transparent;transition:.2s;font-family:inherit;
+  }
+  .chip:hover{color:var(--text);border-color:rgba(255,77,109,.45)}
+  .chip.active{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:600}
+
+  /* Card grid */
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .drama{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    overflow:hidden;display:flex;flex-direction:column;
+    transition:transform .22s,border-color .22s;
+  }
+  .drama:hover{transform:translateY(-4px);border-color:rgba(255,77,109,.4)}
+  .thumb{position:relative;aspect-ratio:16/10;overflow:hidden}
+  .thumb svg{width:100%;height:100%}
+  .thumb .badge{
+    position:absolute;top:10px;left:10px;
+    font-size:11.5px;padding:3px 9px;border-radius:6px;
+    background:rgba(0,0,0,.55);backdrop-filter:blur(4px);color:#fff;
+  }
+  .thumb .eps{
+    position:absolute;bottom:10px;right:10px;
+    font-size:11.5px;padding:2px 8px;border-radius:6px;
+    background:rgba(255,77,109,.9);color:#fff;font-weight:600;
+  }
+  .drama-body{padding:15px 16px 18px;display:flex;flex-direction:column;gap:6px;flex:1}
+  .drama-body h3{font-size:16px;font-weight:700}
+  .drama-body p{font-size:13px;color:var(--muted);line-height:1.65}
+  .drama-meta{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:10px;font-size:12.5px;color:var(--muted)}
+  .drama-meta .go{color:var(--accent);font-weight:600}
+
+  /* Rank list */
+  .rank-wrap{display:grid;grid-template-columns:1.35fr .65fr;gap:32px;align-items:start}
+  .rank-list{display:flex;flex-direction:column;gap:2px}
+  .rank-item{
+    display:flex;align-items:center;gap:16px;
+    padding:14px 12px;border-radius:12px;transition:background .2s;
+  }
+  .rank-item:hover{background:var(--bg-soft)}
+  .rank-item .no{
+    font-size:18px;font-weight:900;font-style:italic;
+    color:var(--muted);width:30px;flex:none;text-align:center;
+  }
+  .rank-item:nth-child(1) .no{color:var(--accent-2)}
+  .rank-item:nth-child(2) .no{color:#d9d9e3}
+  .rank-item:nth-child(3) .no{color:#c98b5e}
+  .rank-item .info{flex:1;min-width:0}
+  .rank-item .info b{font-size:15px;display:block}
+  .rank-item .info span{font-size:12.5px;color:var(--muted)}
+  .rank-item .hot{font-size:12.5px;color:var(--accent);flex:none}
+  .side-note{
+    background:var(--bg-soft);border:1px solid var(--line);
+    border-radius:var(--radius);padding:24px;
+  }
+  .side-note h3{font-size:16px;margin-bottom:10px}
+  .side-note p{font-size:13.5px;color:var(--muted);line-height:1.8}
+  .side-note ul{list-style:none;margin-top:14px;display:flex;flex-direction:column;gap:10px}
+  .side-note li{font-size:13.5px;color:var(--muted);display:flex;gap:9px}
+  .side-note li::before{content:"◆";color:var(--accent);font-size:10px;line-height:2}
+
+  /* Article */
+  .article{max-width:760px}
+  .article h2{font-size:clamp(20px,3vw,25px);margin-bottom:18px}
+  .article p{color:#c7bfd6;font-size:15px;margin-bottom:16px}
+  .article h3{font-size:17px;margin:26px 0 10px;color:var(--text)}
+  .article strong{color:var(--accent-2);font-weight:600}
+
+  /* Download band */
+  .band{
+    background:linear-gradient(120deg,rgba(255,77,109,.16),rgba(255,176,59,.08));
+    border:1px solid rgba(255,77,109,.25);
+    border-radius:22px;padding:36px;display:flex;gap:28px;align-items:center;justify-content:space-between;flex-wrap:wrap;
+  }
+  .band h2{font-size:clamp(20px,3vw,25px);margin-bottom:8px}
+  .band p{color:var(--muted);font-size:14px;max-width:520px}
+  .btn-download{
+    display:inline-flex;align-items:center;gap:9px;
+    padding:13px 30px;border-radius:999px;font-weight:700;font-size:15px;
+    background:var(--accent);color:#fff;flex:none;
+    pointer-events:none;opacity:.95;
+  }
+
+  /* Footer */
+  footer{border-top:1px solid var(--line);padding:36px 0;background:var(--bg-soft)}
+  .foot-in{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:center}
+  .foot-brand{font-weight:800;font-size:17px;display:flex;align-items:center;gap:9px}
+  .foot-brand .mark{width:26px;height:26px;border-radius:8px;background:linear-gradient(140deg,#ff4d6d,#ffb03b);display:grid;place-items:center}
+  .foot-brand .mark svg{width:12px;height:12px}
+  footer p{font-size:13px;color:var(--muted);margin-top:8px}
+  .foot-links{display:flex;gap:20px;font-size:13.5px;color:var(--muted);flex-wrap:wrap}
+  .foot-links a:hover{color:var(--accent)}
+
+  @media(max-width:900px){
+    .hero-in{grid-template-columns:1fr;gap:36px}
+    .hero-visual{max-width:400px}
+    .grid{grid-template-columns:repeat(2,1fr)}
+    .rank-wrap{grid-template-columns:1fr;gap:24px}
+  }
+  @media(max-width:680px){
+    nav.main-nav{display:none}
+    .hero{padding:44px 0 40px}
+    .grid{grid-template-columns:1fr}
+    .band{padding:26px}
+    section{padding:42px 0}
+    .head-cta{padding:7px 14px;font-size:13px}
+  }
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header>
+  <div class="wrap head-in">
+    <a class="logo" href="#top" aria-label="91短剧首页">
+      <span class="mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M8 5 L19 12 L8 19 Z" fill="#fff"/></svg>
+      </span>
+      91短剧
+    </a>
+    <nav class="main-nav" aria-label="主导航">
+      <a href="#top">首页</a>
+      <a href="#hot">热门短剧</a>
+      <a href="#rank">热播榜</a>
+      <a href="#guide">看剧须知</a>
+      <a href="#download">客户端</a>
+    </nav>
+    <a class="head-cta" href="#hot">立即看剧</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="wrap hero-in">
+      <div class="hero-copy">
+        <span class="tagline">◆ 短剧在线观看 · 每日更新</span>
+        <h1>91短剧</h1>
+        <p class="lead">在 91短剧 里，都市逆袭、甜宠、悬疑、家庭等热门短剧被整理成清晰的合集。挑一个类型，从第一集开始，用碎片时间追完一部完整的故事。</p>
+        <div class="hero-actions">
+          <a class="btn-primary" href="#hot">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#fff"><path d="M8 5 L19 12 L8 19 Z"/></svg>
+            浏览热门短剧
+          </a>
+          <a class="btn-ghost" href="#rank">查看热播榜</a>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="poster-stack">
+          <div class="poster p1">
+            <span class="play"><svg viewBox="0 0 24 24" fill="#ff4d6d"><path d="M8 5 L19 12 L8 19 Z"/></svg></span>
+            <div class="cap"><b>都市逆袭</b><span>全集上线</span></div>
+          </div>
+          <div class="poster p2">
+            <span class="play"><svg viewBox="0 0 24 24" fill="#ff4d6d"><path d="M8 5 L19 12 L8 19 Z"/></svg></span>
+            <div class="cap"><b>甜宠日常</b><span>短小好追</span></div>
+          </div>
+          <div class="poster p3">
+            <span class="play"><svg viewBox="0 0 24 24" fill="#ff4d6d"><path d="M8 5 L19 12 L8 19 Z"/></svg></span>
+            <div class="cap"><b>悬疑反转</b><span>一口气看完</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hot drama -->
+  <section id="hot">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2>热门短剧合集</h2>
+          <p>按题材挑选，点开即进入剧集列表</p>
+        </div>
+        <a class="more" href="#rank">看看大家在追什么 →</a>
+      </div>
+
+      <div class="filter-bar" role="group" aria-label="短剧题材筛选">
+        <button class="chip active" data-cat="all">全部</button>
+        <button class="chip" data-cat="city">都市</button>
+        <button class="chip" data-cat="sweet">甜宠</button>
+        <button class="chip" data-cat="susp">悬疑</button>
+        <button class="chip" data-cat="family">家庭</button>
+      </div>
+
+      <div class="grid" id="dramaGrid">
+        <article class="drama" data-cat="city">
+          <div class="thumb">
+            <svg viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+              <rect width="320" height="200" fill="#2b1636"/>
+              <circle cx="250" cy="50" r="60" fill="#7b2a4d" opacity=".7"/>
+              <path d="M0 160 L80 100 L150 150 L230 90 L320 140 L320 200 L0 200 Z" fill="#4a1d3f"/>
+            </svg>
+            <span class="badge">都市</span>
+            <span class="eps">全 68 集</span>
+          </div>
+          <div class="drama-body">
+            <h3>重返巅峰之路</h3>
+            <p>主角在低谷中重新出发，一步步找回属于自己的位置，节奏紧凑，反转不断。</p>
+            <div class="drama-meta"><span>逆袭 · 励志</span><span class="go">去观看</span></div>
+          </div>
+        </article>
+
+        <article class="drama" data-cat="sweet">
+          <div class="thumb">
+            <svg viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+              <rect width="320" height="200" fill="#3a1f2b"/>
+              <circle cx="90" cy="70" r="55" fill="#c04a6a" opacity=".65"/>
+              <circle cx="240" cy="130" r="70" fill="#8a3a5c" opacity=".5"/>
+            </svg>
+            <span class="badge">甜宠</span>
+            <span class="eps">全 52 集</span>
+          </div>
+          <div class="drama-body">
+            <h3>与你相遇的夏天</h3>
+            <p>轻快日常里的双向奔赴，短集数、高密度甜度，适合饭后放松着看。</p>
+            <div class="drama-meta"><span>甜宠 · 日常</span><span class="go">去观看</span></div>
+          </div>
+        </article>
+
+        <article class="drama" data-cat="susp">
+          <div class="thumb">
+            <svg viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+              <rect width="320" height="200" fill="#101c30"/>
+              <circle cx="160" cy="90" r="46" fill="#2e4f7b" opacity=".8"/>
+              <rect x="120" y="86" width="80" height="8" fill="#7fa8d6" opacity=".7"/>
+            </svg>
+            <span class="badge">悬疑</span>
+            <span class="eps">全 40 集</span>
+          </div>
+          <div class="drama-body">
+            <h3>第七个夜晚</h3>
+            <p>线索层层递进，每集结尾都留一个钩子，喜欢推理氛围的观众可以从这开始。</p>
+            <div class="drama-meta"><span>悬疑 · 推理</span><span class="go">去观看</span></div>
+          </div>
+        </article>
+
+        <article class="drama" data-cat="family">
+          <div class="thumb">
+            <svg viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+              <rect width="320" height="200" fill="#2d2517"/>
+              <path d="M0 150 Q80 100 160 140 T320 120 L320 200 L0 200 Z" fill="#8a4b1e" opacity=".7"/>
+              <circle cx="260" cy="60" r="34" fill="#ffb03b" opacity=".5"/>
+            </svg>
+            <span class="badge">家庭</span>
+            <span class="eps">全 60 集</span>
+          </div>
+          <div class="drama-body">
+            <h3>老街的灯火</h3>
+            <p>围绕一家人的生活展开，讲的是选择和体谅，情绪铺陈细腻，适合慢慢看。</p>
+            <div class="drama-meta"><span>家庭 · 情感</span><span class="go">去观看</span></div>
+          </div>
+        </article>
+
+        <article class="drama" data-cat="city">
+          <div class="thumb">
+            <svg viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+              <rect width="320" height="200" fill="#1a1a2e"/>
+              <rect x="40" y="70" width="50" height="130" fill="#3d3d68" opacity=".8"/>
+              <rect x="110" y="40" width="60" height="160" fill="#5a4a7a" opacity=".75"/>
+              <rect x="190" y="90" width="55" height="110" fill="#3d3d68" opacity=".8"/>
+              <rect x="260" y="60" width="45" height="140" fill="#5a4a7a" opacity=".6"/>
+            </svg>
+            <span class="badge">都市</span>
+            <span class="eps">全 75 集</span>
+          </div>
+          <div class="drama-body">
+            <h3>城市边缘的我们</h3>
+            <p>普通人在城市里的打拼与坚持，人物关系清晰，适合喜欢现实题材的观众。</p>
+            <div class="drama-meta"><span>都市 · 现实</span><span class="go">去观看</span></div>
+          </div>
+        </article>
+
+        <article class="drama" data-cat="sweet">
+          <div class="thumb">
+            <svg viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+              <rect width="320" height="200" fill="#2f1c33"/>
+              <circle cx="110" cy="100" r="48" fill="#ff7a9c" opacity=".55"/>
+              <circle cx="210" cy="100" r="48" fill="#ffb03b" opacity=".45"/>
+            </svg>
+            <span class="badge">甜宠</span>
+            <span class="eps">全 48 集</span>
+          </div>
+          <div class="drama-body">
+            <h3>先婚后爱的我们</h3>
+            <p>从误会到理解，感情线推进自然，节奏轻快，是短剧里常见的入门类型。</p>
+            <div class="drama-meta"><span>甜宠 · 情感</span><span class="go">去观看</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rank -->
+  <section id="rank">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2>热播榜</h2>
+          <p>按近期播放热度排列，方便快速选择</p>
+        </div>
+      </div>
+      <div class="rank-wrap">
+        <div class="rank-list">
+          <a class="rank-item" href="#hot"><span class="no">1</span><span class="info"><b>重返巅峰之路</b><span>都市 · 逆袭</span></span><span class="hot">热度 98</span></a>
+          <a class="rank-item" href="#hot"><span class="no">2</span><span class="info"><b>第七个夜晚</b><span>悬疑 · 推理</span></span><span class="hot">热度 94</span></a>
+          <a class="rank-item" href="#hot"><span class="no">3</span><span class="info"><b>与你相遇的夏天</b><span>甜宠 · 日常</span></span><span class="hot">热度 91</span></a>
+          <a class="rank-item" href="#hot"><span class="no">4</span><span class="info"><b>城市边缘的我们</b><span>都市 · 现实</span></span><span class="hot">热度 87</span></a>
+          <a class="rank-item" href="#hot"><span class="no">5</span><span class="info"><b>老街的灯火</b><span>家庭 · 情感</span></span><span class="hot">热度 84</span></a>
+          <a class="rank-item" href="#hot"><span class="no">6</span><span class="info"><b>先婚后爱的我们</b><span>甜宠 · 情感</span></span><span class="hot">热度 80</span></a>
+        </div>
+        <aside class="side-note">
+          <h3>怎么选一部开始看</h3>
+          <p>如果你只想放松，可以从甜宠类入手；想找点紧张感，就挑悬疑；时间不多时，先看集数少的剧。</p>
+          <ul>
+            <li>单集时长较短，适合通勤与睡前</li>
+            <li>按题材筛选更快找到合口味的剧</li>
+            <li>榜单按热度更新，可作参考</li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- Guide -->
+  <section id="guide">
+    <div class="wrap article">
+      <h2>在 91短剧 看剧，可以这样安排</h2>
+      <p>短剧的特点是集数多、单集短，故事推进快。很多人第一次接触 91短剧 时会问：从哪一部开始、怎么看更省时间？这里把常见的看剧路径说清楚，方便你按自己的节奏进入。</p>
+
+      <h3>先定题材，再看集数</h3>
+      <p>题材决定体验。都市逆袭看重主角成长与反转，甜宠侧重关系推进，悬疑依赖线索铺陈，家庭题材更强调情绪与人物关系。确定题材后，再看总集数和单集长度，就能判断是否适合你的时间。91短剧 的合集页面把题材与集数放在一起展示，正是为了减少反复点开的麻烦。</p>
+
+      <h3>用榜单做筛选，而不是唯一标准</h3>
+      <p>热播榜反映的是近期关注度，能帮你快速排除陌生选项，但热度高不等于适合每个人。更稳妥的做法是：先在榜上找一两部感兴趣的，再回到题材合集里对比简介，选出真正想看的。91短剧 把榜单与合集分开呈现，就是这个思路。</p>
+
+      <h3>碎片时间也能追完一部</h3>
+      <p>由于单集较短，通勤、午休、睡前的十几分钟都能推进几集。建议一次只看三五集，避免因为节奏太快而错过关键信息，尤其是悬疑类作品，前后细节往往互相呼应。91短剧 的剧集列表按顺序排列，便于控制进度。</p>
+
+      <h3>把想看的记下来</h3>
+      <p>短剧数量多，容易被新的推荐冲淡记忆。看到感兴趣的剧，可以记下剧名与题材，下次直接在合集里找。91短剧 的栏目按题材分组，名字与题材同时出现，查找时更直接。</p>
+    </div>
+  </section>
+
+  <!-- Download band -->
+  <section id="download">
+    <div class="wrap">
+      <div class="band">
+        <div>
+          <h2>91短剧 客户端</h2>
+          <p>把常看的短剧集中在一处，按题材浏览、按榜单挑选。客户端版本信息以发布页说明为准，下载前请确认来源。</p>
+        </div>
+        <a class="btn-download" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M7 11l5 5 5-5"/><path d="M4 20h16"/></svg>
+          下载
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap foot-in">
+    <div>
+      <div class="foot-brand">
+        <span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5 L19 12 L8 19 Z" fill="#fff"/></svg></span>
+        91短剧
+      </div>
+      <p>短剧在线观看与发现，题材合集、热播榜单与看剧建议集中呈现。</p>
+    </div>
+    <div class="foot-links">
+      <a href="#hot">热门短剧</a>
+      <a href="#rank">热播榜</a>
+      <a href="#guide">看剧须知</a>
+      <a href="#download">客户端</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var chips = document.querySelectorAll('.chip');
+    var cards = document.querySelectorAll('#dramaGrid .drama');
+    chips.forEach(function(chip){
+      chip.addEventListener('click', function(){
+        chips.forEach(function(c){ c.classList.remove('active'); });
+        chip.classList.add('active');
+        var cat = chip.getAttribute('data-cat');
+        cards.forEach(function(card){
+          var show = (cat === 'all') || (card.getAttribute('data-cat') === cat);
+          card.style.display = show ? '' : 'none';
+        });
+      });
+    });
+  })();
+</script>
+
+</body>
+</html>
